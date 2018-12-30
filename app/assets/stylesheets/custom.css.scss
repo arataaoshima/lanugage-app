@@ -1,0 +1,44 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+.body{
+    height:500px;
+    background-color: #deffff;
+  
+}
+
+body {
+    background-color: coral;
+    
+}
+
+.content-wrapper{
+    text-align:center;
+    //background-color: red;
+}
+.fa-color {
+    color: #3b5998;
+}
+
+.nav-color {
+    background-color: rgba(0,0,0,0);
+    border:none;
+}
+
+.thumbnail {
+    width:50px;
+    text-align:right;
+    float:right;
+}
+
+.requrest-form {
+    margin:0 auto;
+
+    width:80%;
+}
+
+.content-height {
+  
+   height: 600px; 
+}

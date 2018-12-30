@@ -1,0 +1,69 @@
+// Place all the styles related to the quizzes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.balloon1{
+  position: relative;
+  padding: 20px;
+  border-radius: 10px;
+  color: #ffffff;
+  background-color: #6495ed;
+  margin-left: 110px;          /* 左に余白を設ける */
+}
+
+.person1 {
+    width:100%;
+    background-color:#ffffe0;
+    border-radius: 100%;
+}
+
+.balloon1::before{
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  left: -15px;
+  top: 20px;
+  border-right: 15px solid #6495ed;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+}
+
+.balloon2{
+  margin: 0 0 0 auto;
+  position: relative;
+  padding: 20px;
+  border-radius: 10px;
+  //color: #ffffff;
+  background-color: #6495ed;
+  //margin-right: 110px;          /* 右に余白を設ける */
+}
+
+
+.balloon2::before{
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  right: -15px;
+  top: 20px;
+  border-left: 15px solid #6495ed;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+}
+
+.answer{
+    text-align:right;
+  
+}
+
+.hint-modal-button {
+  margin-top:30px;
+}
+
+.drill-question {
+  text:h1
+}

@@ -1,0 +1,76 @@
+<!-- Question -->
+<div class="row">
+ <div class="col-md-1"></div>
+ <div class="col-md-1 col-md-offest-3">
+ <img src="/horse.png" class="person1">
+ </div>
+<div class="balloon1 col-md-6">
+  <%= @quiz.question %>
+</div>
+</div>
+
+<!-- Answer -->
+
+<%= form_tag("/check/#{@quiz.id}",method: :post) do %>
+<div class="row answer">
+ <div class="col-md-3 test"></div>
+   <div class="balloon2 col-md-6">
+    <input name="answer"> <% if @quiz.id == 2 || @quiz.id == 4 %> <%= current_user.name %><% end %>
+   </div>
+ <div class="col-md-1 col-md-offset-1">
+  <% if current_user.image_data != nil %>
+  <%= image_tag user_icon_path(current_user), class:"person1" %>
+  <% else %>
+   <img src="/horse.png" class="person1">
+  <% end %>
+ </div>
+   
+</div>
+<br><input type="submit">
+<% end %>
+
+
+
+<%= link_to "クイズ一覧", "/quizzes" %>
+
+ <!-- Button trigger modal -->
+<div class="hint-modal-button">
+  <button type="button" class="btn login-btn" data-toggle="modal" data-target="#exampleModal">
+  ヒント
+  </button> 
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <%= form_tag("/users/login") do %>
+        <!--
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel" align="center">あいことば</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+           <span aria-hidden="true">&times;</span> 
+        </button>
+      </div> -->
+      <div class="modal-body login-modal">
+        
+       <p></p>
+      <!-- <img src="/key.png" class="login-key">
+      <input class="form-control" name="username"> -->
+      
+           <div class="form-group row">
+             <!-- <label for="inputPassword" class="col-sm-2 col-form-label"><img src="/key.png" class="login-key"></label> -->
+               <div class="col-sm-10">
+                   <%= @quiz.hint %>
+               <!--  <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="username"> -->
+               </div>
+      </div>
+
+      </div>
+      <!-- <div class="modal-footer">
+       <!--  <input type="submit" value="Login" class="btn" class="modal-login-button"> -->
+        <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Go back</button> -->
+      </div> 
+      <% end %>
+    </div>
+  </div>

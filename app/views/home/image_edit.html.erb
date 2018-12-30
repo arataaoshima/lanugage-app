@@ -1,0 +1,8 @@
+<h1>Change User Image</h1>
+
+<%= image_tag user_icon_path(@user), class:"for_image_change" %>
+<%= form_tag("/user_update/#{@user.id}", multipart: true) do %>
+<input type="file" name="image_data" class="file-upload-button">
+<p></p>
+<input type="submit">
+<% end %>

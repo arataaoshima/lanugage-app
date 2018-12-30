@@ -1,0 +1,12 @@
+<div class="content-wrapper">
+<h1>Edit User</h1>
+<%= form_tag("/home/user_edit/#{@user.id}", method: :post) do%>
+<p>Email</p>
+<input name="email" value="<%= @user.email %>">
+<p>Name</p>
+<input name="name" value="<%= @user.name %>"></br>
+<p>アドミン</p>
+<input type="checkbox" name="admin" value="true"></br>
+<input type="submit">
+<% end %>
+</div>
